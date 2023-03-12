@@ -4,14 +4,14 @@ defmodule Swapper do
   def swap([_]), do: raise("Can't swap a list with an odd number of list.")
 end
 
-defmodule WeatherHistory do
-  def for_location_27([], _target_loc), do: []
+defmodule WeatherDatabase do
+  def find_id([], _target_loc), do: []
 
-  def for_location_27([head = [_, target_loc, _, _] | tail], target_loc) do
-    [head | for_location_27(tail, target_loc)]
+  def find_id([head = [_, target_loc, _, _] | tail], target_loc) do
+    [head | find_id(tail, target_loc)]
   end
 
-  def for_location_27([_ | tail], target_loc), do: for_location_27(tail, target_loc)
+  def find_id([_ | tail], target_loc), do: find_id(tail, target_loc)
 
   def testData do
     [
