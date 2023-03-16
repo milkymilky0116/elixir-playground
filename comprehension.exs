@@ -16,7 +16,7 @@ end
 
 defmodule Prime do
   def range(n) do
-    init_list = MyList.span(2, n)
+    init_list = span(2, n)
     for x <- init_list, is_prime(x) == true, do: x
   end
 
